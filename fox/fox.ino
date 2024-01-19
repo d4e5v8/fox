@@ -25,7 +25,7 @@
 String callmessage = "KM6ZWL FOR DANIEL"; // your callsign goes here
 String morse = ""; // leave this blank for now; it will be filled in during setup
 float frequency = 146.565; // 146.565 is the normal TX frequency for foxes
-int delayms = 300000; // delay between transmissions in milliseconds
+int delayms = 120000; // delay between transmissions in milliseconds
 int initial_delay = 1000; // delay before transmissions start in milliseconds
 byte bandwidth = 1; // Bandwidth, 0=12.5k, 1=25K
 byte squelch = 1; // Squelch 0-8, 0 is listen/open
@@ -62,10 +62,7 @@ void loop(){
 
     playMorse();
     delay(2000);
-    playMorse();
-    delay(2000);
-    playMorse();
-    delay(2000);
+    playMelody();
     
     digitalWrite(PTT_Pin, HIGH); // Put the SA868 in RX mode
     delay(delayms); // wait 30 seconds to allow cooldown of SA868
